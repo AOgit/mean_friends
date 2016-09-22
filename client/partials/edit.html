@@ -1,0 +1,16 @@
+<br>
+<div ng-controller="editController">
+	<h1>Edit {{ friend.first_name }}'s Profile</h1>
+	<form>
+		<label>First Name</label>
+		<input type="text" placeholder="{{ friend.first_name }}" ng-model="editAFriend.first_name">
+		<label>Last Name</label>
+		<input type="text" placeholder="{{ friend.last_name }}" ng-model="editAFriend.last_name">
+		<label>Birthday</label>
+		<input type="date" ng-model="editAFriend.birthday">
+		<p>Current Birthday: {{ friend.birthday.slice(0,10) }}</p>
+		<input type="submit" value="Edit User" ng-click="editFriend()">
+	</form>
+	<br>
+	<a href="#/users">Back</a>
+</div>

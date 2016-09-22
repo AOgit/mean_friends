@@ -1,0 +1,24 @@
+<br>
+<h1>Create a new friend! :D</h1>
+<div ng-controller="newController">
+	<div ng-messages="newFriendForm.first_name.$error" style="color:maroon" role="alert">
+	     <p ng-message="minlength">Friend's first name is too short. Must be 4 characters or more.</p>
+	     <p ng-message="required">Friend's first name is required.</p>
+ 	</div>
+ 	<div ng-messages="newFriendForm.last_name.$error" style="color:maroon" role="alert">
+	     <p ng-message="minlength">Friend's last name is too short. Must be 4 characters or more.</p>
+	     <p ng-message="required">Friend's last name is required.</p>
+ 	</div>
+ 	<br>
+	<form name="newFriendForm">
+		<label>First Name</label> 
+		<input type="text" name="first_name" ng-model="newFriend.first_name" ng-minlength="4" required>
+		<label>Last Name</label>
+		<input type="text" name="last_name" ng-model="newFriend.last_name" ng-minlength="4" required>
+		<label>Birthday</label>
+		<input type="date" ng-model="newFriend.birthday">
+		<input type="submit" value="Create Friend" ng-click="addFriend()">
+	</form>
+	<br>
+	<a href="#/friends">Back</a>
+</div>

@@ -1,0 +1,21 @@
+<br>
+<h1>This is your friends page</h1>
+<div ng-controller="newController">
+	<label>Search: <input ng-model="searchText" placeholder="Filter: Birthday"></label> 
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Birthday</th>
+			<th>Show</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		<tr ng-repeat="user in friends | filter:searchText:{$:'date'}">
+			<td>{{ user.first_name }} {{ user.last_name }}</td>
+			<td>{{ user.birthday.slice(0,10) }}</td>
+			<td><a href="#/friend/{{ user._id }}">Show</a></td>
+			<td><a href="#/friend/{{ user._id }}/edit">Edit</a></td>
+			<td><a href="" ng-click="unFriend(user._id)">Delete</a></td>
+		</tr>
+	</table>
+</div>
